@@ -1,17 +1,11 @@
 /**
- * A simple form that allows the input of a new expense record.
+ * A form that facilitates input of a new expense record.
  */
 
 import React from 'react';
 import styles from '../../styles/new-expense.css';
 
 class NewExpense extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    // TODO: state?
-  }
 
   render() {
 
@@ -56,11 +50,17 @@ class NewExpense extends React.Component {
             </select>
             </td>
           </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button>Submit</button>
+              <button>Reset</button>
+            </td>
+          </tr>
         </table>
       </div>
     );
   }
-
 }
 
 export default NewExpense;

@@ -2,19 +2,17 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-
-  // the main js file that starts your application (not html page that user loads)
-  entry: path.join(__dirname, 'scripts', 'index.js'),
-
+  entry: path.join(__dirname, 'src', 'scripts', 'index.jsx'),
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'app.js'
   },
-
   module: {
     loaders: [
       {
-        test: path.join(__dirname, 'scripts'),
+        // test: path.join(__dirname, 'src', 'scripts'),
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
         loader: ['babel-loader'],
         query: {
           cacheDirectory: 'babel_cache',
@@ -34,7 +32,6 @@ module.exports = {
       }
     ]
   },
-
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)

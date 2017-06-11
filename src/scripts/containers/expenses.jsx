@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import Expense from './expense.js';
+import Expense from './expense.jsx';
 
 class Expenses extends React.Component {
 
@@ -73,7 +73,6 @@ class Expenses extends React.Component {
       </table>
     );
   }
-
 }
 
 export default Expenses;
